@@ -106,6 +106,16 @@ const useFolderContextMenu = (
         if (triggerEasterEgg) {
           triggerEasterEggCountdown = EASTER_EGG_CLICK_COUNT;
         }
+      } else if (wallpaper === "VANTA2") {
+        triggerEasterEggCountdown -= 1;
+
+        const triggerEasterEgg = triggerEasterEggCountdown === 0;
+
+        setSessionWallpaper(`VANTA2${triggerEasterEgg ? " WIREFRAME" : ""}`);
+
+        if (triggerEasterEgg) {
+          triggerEasterEggCountdown = EASTER_EGG_CLICK_COUNT;
+        }
       } else {
         triggerEasterEggCountdown = EASTER_EGG_CLICK_COUNT;
 

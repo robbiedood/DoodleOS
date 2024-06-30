@@ -159,6 +159,7 @@ const useWallpaper = (
               }
             }
           );
+
           if (wallpaperName === "STABLE_DIFFUSION") {
             const loadingStatus = document.createElement("div");
 

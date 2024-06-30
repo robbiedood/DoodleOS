@@ -334,6 +334,19 @@ export const DEFAULT_SCROLLBAR_WIDTH = 17;
 export const TASKBAR_HEIGHT = 30;
 
 export const PACKAGE_DATA = {
+  alias: "DoodleOS",
+  author: {
+    email: "therobbieboo@gmail.com",
+    name: "Robbie a dood",
+    npub: "",
+    url: "https://www.facebook.com/therobbiedood",
+  },
+  description: "Desktop environment in the browser",
+  license: "MIT",
+  version: "2.0.0",
+};
+
+export const PACKAGE_DATA_dustinOS = {
   alias: "daedalOS",
   author: {
     email: "dustinbrett@gmail.com",

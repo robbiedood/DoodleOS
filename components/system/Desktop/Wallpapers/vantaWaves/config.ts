@@ -2,7 +2,7 @@ import { type VantaWavesConfig } from "components/system/Desktop/Wallpapers/vant
 
 export const config: VantaWavesConfig = {
   camera: {
-    far: 400,
+    far: 800,
     fov: 30,
     near: 0.1,
   },
@@ -10,7 +10,7 @@ export const config: VantaWavesConfig = {
   colorCycleSpeed: 10,
   forceAnimate: true,
   hh: 50,
-  hue: 225,
+  hue: 100,
   lightness: 20,
   material: {
     options: {

@@ -94,7 +94,7 @@ export const WALLPAPER_MENU: WallpaperMenuItem[] = [
   {
     id: "VANTA",
     name: "Vanta Waves",
-    startsWith: true,
+    startsWith: false,
   },
 ];
 
