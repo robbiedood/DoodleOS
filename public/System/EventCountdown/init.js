@@ -3,7 +3,8 @@
     const ctx = canvas.getContext('2d');
     const effect = global.effectInit(canvas);
 
-    const texts = ['👋🏻 Explore infinite possibilities!',
+    const texts =
+    ['👋🏻 Explore infinite possibilities!',
     '👉🏻 Enrollment form is available now!',
     '📝 Enroll by July 27th to join us',
     ];
