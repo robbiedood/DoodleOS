@@ -1,3 +1,5 @@
+// components/system/Desktop/Wallpapers/constants.ts
+
 import { type WallpaperFunc } from "components/system/Desktop/Wallpapers/types";
 import { type WallpaperFit } from "contexts/session/types";
 
@@ -15,6 +17,8 @@ export const WALLPAPER_PATHS: Record<
 > = {
   COASTAL_LANDSCAPE: () =>
     import("components/system/Desktop/Wallpapers/ShaderToy/CoastalLandscape"),
+  EVENTCOUNTDOWN: () =>
+    import("components/system/Desktop/Wallpapers/EventCountdown"),
   HEXELLS: () => import("components/system/Desktop/Wallpapers/hexells"),
   MATRIX: () => import("components/system/Desktop/Wallpapers/Matrix"),
   STABLE_DIFFUSION: () =>
@@ -30,6 +34,14 @@ export const WALLPAPER_WORKERS: Record<string, (info?: string) => Worker> = {
         import.meta.url
       ),
       { name: "Wallpaper (Coastal Landscape)" }
+    ),
+  EVENT_COUNTDOWN: (): Worker =>
+    new Worker(
+      new URL(
+        "components/system/Desktop/Wallpapers/EventCountdown/wallpaper.worker",
+        import.meta.url
+      ),
+      { name: "Wallpaper (Event Countdown)" }
     ),
   HEXELLS: (): Worker =>
     new Worker(
@@ -69,6 +81,10 @@ export const WALLPAPER_MENU: WallpaperMenuItem[] = [
   {
     id: "COASTAL_LANDSCAPE",
     name: "Coastal Landscape",
+  },
+  {
+    id: "EVENT_COUNTDOWN",
+    name: "Event Countdown",
   },
   {
     id: "HEXELLS",

@@ -1,6 +1,7 @@
 import { join } from "path";
 import { useTheme } from "styled-components";
 import { useCallback, useEffect, useRef } from "react";
+import EventCountdown from "components/system/Desktop/Wallpapers/EventCountdown";
 import {
   BASE_CANVAS_SELECTOR,
   BASE_VIDEO_SELECTOR,
@@ -70,7 +71,10 @@ const useWallpaper = (
   const failedOffscreenContext = useRef(false);
   const loadWallpaper = useCallback(
     async (keepCanvas?: boolean) => {
-      if (!desktopRef.current) return;
+      if (!desktopRef.current) {
+        console.error("Desktop reference is null");
+        return;
+      }
 
       let config: WallpaperConfig | undefined;
       const { matches: prefersReducedMotion } = window.matchMedia(
@@ -86,8 +90,12 @@ const useWallpaper = (
           isTopWindow = true;
         }
       }
-
-      if (wallpaperName === "VANTA") {
+      if (wallpaperName === "EVENT_COUNTDOWN") {
+        desktopRef.current
+          .querySelectorAll("canvas, video")
+          .forEach((el) => el.remove());
+        EventCountdown(desktopRef.current);
+      } else if (wallpaperName === "VANTA") {
         config = {
           ...vantaConfig,
           waveSpeed:
@@ -107,6 +115,10 @@ const useWallpaper = (
               }),
         };
       } else if (wallpaperName === "STABLE_DIFFUSION") {
+        desktopRef.current
+          .querySelectorAll("canvas, video")
+          .forEach((el) => el.remove());
+
         const promptsFilePath = `${PICTURES_FOLDER}/${PROMPT_FILE}`;
 
         if (await exists(promptsFilePath)) {
@@ -360,7 +372,6 @@ const useWallpaper = (
         const video = document.createElement("video");
 
         video.src = wallpaperUrl;
-
         video.autoplay = true;
         video.controls = false;
         video.disablePictureInPicture = true;
