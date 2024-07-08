@@ -334,12 +334,12 @@ export const DEFAULT_SCROLLBAR_WIDTH = 17;
 export const TASKBAR_HEIGHT = 30;
 
 export const PACKAGE_DATA = {
-  alias: "daedalOS",
+  alias: "WebOS",
   author: {
-    email: "dustinbrett@gmail.com",
-    name: "Dustin Brett",
+    email: "acs108801@gm.ntcu.edu.com",
+    name: "JingSyue",
     npub: "npub10uc7hg6wdxhhd7ee8x9c5lr9d0ux7272rv2m0mc03ds54q7quxjss02r3p",
-    url: "https://dustinbrett.com",
+    url: "https://www.instagram.com/jingsyue.lin?igsh=cG9qeDA0dTR4bmMx&utm_source=qr",
   },
   description: "Desktop environment in the browser",
   license: "MIT",
