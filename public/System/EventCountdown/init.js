@@ -4,9 +4,10 @@
     const effect = global.effectInit(canvas);
 
     const texts =
-    ['👋🏻 Explore infinite possibilities!',
-    '👉🏻 Enrollment form is available now!',
-    '📝 Enroll by July 27th to join us',
+    ['👋🏻 Welcome!',
+    '👉🏻 See more features?',
+    '👉🏻 Join the waitlist!',
+    '📝 Release will be 7/27',
     ];
     let currentTextIndex = 0;
     let textOpacity = 0;
@@ -34,7 +35,7 @@
       const formattedTime = `${days.toString().padStart(2, '0')}.${sixDigitMilliseconds.toString().padStart(6, '0')}`;
       ctx.fillText(formattedTime, canvas.width / 2, canvas.height / 2);
       ctx.font = 'bold 24px Arial, sans-serif';
-      ctx.fillText('days till event starts', canvas.width / 2, canvas.height / 2 + 40);
+      ctx.fillText('days till release', canvas.width / 2, canvas.height / 2 + 40);
 
       // Hello context
       //ctx.font = 'bold 72px Arial, sans-serif';
