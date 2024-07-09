@@ -1,7 +1,6 @@
 import { join } from "path";
 import { useTheme } from "styled-components";
 import { useCallback, useEffect, useRef } from "react";
-import EventCountdown from "components/system/Desktop/Wallpapers/EventCountdown";
 import {
   BASE_CANVAS_SELECTOR,
   BASE_VIDEO_SELECTOR,
@@ -90,12 +89,12 @@ const useWallpaper = (
           isTopWindow = true;
         }
       }
-      if (wallpaperName === "EVENT_COUNTDOWN") {
-        desktopRef.current
-          .querySelectorAll("canvas, video")
-          .forEach((el) => el.remove());
-        EventCountdown(desktopRef.current);
-      } else if (wallpaperName === "VANTA") {
+      // if (wallpaperName === "EVENT_COUNTDOWN") {
+      // desktopRef.current
+      //   .querySelectorAll("canvas, video")
+      //   .forEach((el) => el.remove());
+      // EventCountdown(desktopRef.current);
+      if (wallpaperName === "VANTA") {
         config = {
           ...vantaConfig,
           waveSpeed:
@@ -115,10 +114,6 @@ const useWallpaper = (
               }),
         };
       } else if (wallpaperName === "STABLE_DIFFUSION") {
-        desktopRef.current
-          .querySelectorAll("canvas, video")
-          .forEach((el) => el.remove());
-
         const promptsFilePath = `${PICTURES_FOLDER}/${PROMPT_FILE}`;
 
         if (await exists(promptsFilePath)) {
@@ -137,7 +132,6 @@ const useWallpaper = (
 
       if (!keepCanvas) {
         desktopRef.current.querySelector(BASE_CANVAS_SELECTOR)?.remove();
-
         window.WallpaperDestroy?.();
       }
 

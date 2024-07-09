@@ -17,7 +17,7 @@ export const WALLPAPER_PATHS: Record<
 > = {
   COASTAL_LANDSCAPE: () =>
     import("components/system/Desktop/Wallpapers/ShaderToy/CoastalLandscape"),
-  EVENTCOUNTDOWN: () =>
+  EVENT_COUNTDOWN: () =>
     import("components/system/Desktop/Wallpapers/EventCountdown"),
   HEXELLS: () => import("components/system/Desktop/Wallpapers/hexells"),
   MATRIX: () => import("components/system/Desktop/Wallpapers/Matrix"),
@@ -34,14 +34,6 @@ export const WALLPAPER_WORKERS: Record<string, (info?: string) => Worker> = {
         import.meta.url
       ),
       { name: "Wallpaper (Coastal Landscape)" }
-    ),
-  EVENT_COUNTDOWN: (): Worker =>
-    new Worker(
-      new URL(
-        "components/system/Desktop/Wallpapers/EventCountdown/wallpaper.worker",
-        import.meta.url
-      ),
-      { name: "Wallpaper (Event Countdown)" }
     ),
   HEXELLS: (): Worker =>
     new Worker(

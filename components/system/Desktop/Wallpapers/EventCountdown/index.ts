@@ -7,10 +7,8 @@ declare global {
       canvas: HTMLCanvasElement,
       targetDate: Date
     ) => void;
-    wallpaperDestroy: () => void;
   }
 }
-let eventCountdownInstance: { destroy?: () => void } | undefined;
 export const ROOT_PATH = "/System/EventCountdown";
 
 const libs = [
@@ -26,11 +24,6 @@ const EventCountdown = async (el?: HTMLElement | null): Promise<void> => {
   }
   console.error("Element found");
 
-  window.wallpaperDestroy = () => {
-    eventCountdownInstance?.destroy?.();
-    eventCountdownInstance = undefined;
-  };
-
   await loadFiles(libs);
 
   const canvas = document.createElement("canvas");
@@ -41,7 +34,6 @@ const EventCountdown = async (el?: HTMLElement | null): Promise<void> => {
 
   window.effectInit(canvas);
   window.initializeEventCountdown(canvas, targetDate);
-  window.wallpaperDestroy();
   el.append(canvas);
 };
 
