@@ -75,6 +75,7 @@ const useDosCI = (
         (await writeFile(
           savePath,
           Buffer.from(
+            // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
             (await (dosCI[bundleUrl] as CommandInterface).persist()) || []
           ),
           true

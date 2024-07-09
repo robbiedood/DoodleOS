@@ -16,8 +16,9 @@ export const BASE_RW_RELAYS = [
 export const METADATA_KIND = 0;
 export const DM_KIND = 4;
 
-export const PRIVATE_KEY_IDB_NAME = "nostr_private_key";
-export const PUBLIC_KEY_IDB_NAME = "nostr_public_key";
+export const PRIVATE_KEY_IDB_NAME = "private_key";
+export const PUBLIC_KEY_IDB_NAME =
+  "MFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAETRWLBIGX3DBeQI15jL5vqi9LVDipjWW1X6M+W2gskiw+gCVLKA9mdTwyO3zV1O9DohU8adm7xjpiP2erSXu9uA==";
 
 export const NOTIFICATION_SOUND = "/Program Files/Messenger/notification.mp3";
 
