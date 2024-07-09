@@ -3,10 +3,10 @@
     const ctx = canvas.getContext('2d');
     const effect = global.effectInit(canvas);
 
-    const texts =
-    ['👋🏻 Welcome!',
-    '👉🏻 See more features?',
-    '👉🏻 Join the waitlist!',
+    const texts = [
+      "👋🏻 Welcome!",
+      "👉🏻 See more features?",
+      "👉🏻 Join the waitlist!",
     '📝 Release will be 7/27',
     ];
     let currentTextIndex = 0;
@@ -37,11 +37,6 @@
       ctx.font = 'bold 24px Arial, sans-serif';
       ctx.fillText('days till release', canvas.width / 2, canvas.height / 2 + 40);
 
-      // Hello context
-      //ctx.font = 'bold 72px Arial, sans-serif';
-      //ctx.textAlign = 'center';
-      // ctx.fillText('Hello !', canvas.width / 2, canvas.height / 2 + 40);
-
       // 繪製文字
       ctx.font = 'bold 24px Arial, sans-serif';
       ctx.textAlign = 'left';
@@ -62,7 +57,6 @@
           textOpacity = 1;
         }
       }
-
       requestAnimationFrame(updateCountdown);
     }
 
@@ -72,7 +66,6 @@
       destroy: function() {
         document.body.removeChild(textContainer);
         document.head.removeChild(style);
-        // 移除其他可能添加的事件監聽器
       }
     };
   };

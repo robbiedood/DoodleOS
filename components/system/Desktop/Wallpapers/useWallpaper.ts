@@ -89,11 +89,7 @@ const useWallpaper = (
           isTopWindow = true;
         }
       }
-      // if (wallpaperName === "EVENT_COUNTDOWN") {
-      // desktopRef.current
-      //   .querySelectorAll("canvas, video")
-      //   .forEach((el) => el.remove());
-      // EventCountdown(desktopRef.current);
+
       if (wallpaperName === "VANTA") {
         config = {
           ...vantaConfig,

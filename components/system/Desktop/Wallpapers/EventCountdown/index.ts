@@ -32,7 +32,6 @@ const EventCountdown = async (el?: HTMLElement | null): Promise<void> => {
 
   const targetDate = new Date("2024-07-27T00:00:00");
 
-  window.effectInit(canvas);
   window.initializeEventCountdown(canvas, targetDate);
   el.append(canvas);
 };

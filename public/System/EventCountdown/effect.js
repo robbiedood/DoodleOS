@@ -4,11 +4,6 @@
     const particles = [];
     const particleCount = 100;
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
@@ -50,22 +45,6 @@
         });
       });
     }
-
-    function clearBackground(el) {
-      const oldCanvas = el.querySelector('canvas');
-      console.error("receive el and clear in effect.js");
-      if (oldCanvas && !oldCanvas.transferControlToOffscreen) {
-        const ctx = oldCanvas.getContext('2d');
-        if (ctx) {
-          ctx.clearRect(0, 0, oldCanvas.width, oldCanvas.height);
-        }
-      }
-    }
-
-    resizeCanvas();
-    clearBackground(canvas);
-
-    window.addEventListener('resize', resizeCanvas);
 
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());
