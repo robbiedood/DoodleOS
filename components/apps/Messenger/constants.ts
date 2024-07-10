@@ -6,6 +6,7 @@ import {
 } from "utils/constants";
 
 export const BASE_RW_RELAYS = [
+  "wss://relay.damus.io", // add relay.damus.io
   "wss://nos.lol",
   "wss://nostr.mom",
   "wss://public.relaying.io",
