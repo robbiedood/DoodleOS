@@ -9,7 +9,11 @@ const StyledProfile = styled.figure<StyledProfileProps>`
     cursor: ${({ $clickable }) => ($clickable ? "pointer" : "default")};
     position: relative;
 
-    > img,
+    > img {
+      object-fit: cover;
+      object-position: center;
+    }
+
     > svg {
       cursor: inherit;
     }

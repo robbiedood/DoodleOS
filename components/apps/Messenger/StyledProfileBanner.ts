@@ -33,6 +33,8 @@ const StyledProfileBanner = styled.div`
       max-width: 38px;
       min-height: 38px;
       min-width: 38px;
+      object-fit: cover;
+      object-position: center;
       width: 38px;
 
       path {
