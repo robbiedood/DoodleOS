@@ -338,10 +338,10 @@ export const PACKAGE_DATA = {
   author: {
     email: "acs108801@gm.ntcu.edu.com",
     name: "JingSyue",
-    npub: "npub10uc7hg6wdxhhd7ee8x9c5lr9d0ux7272rv2m0mc03ds54q7quxjss02r3p",
+    npub: "npub1dkq7s7ujxenal0aws00wtawzztk2chg8d055l2dz8kf8wfvdka9qnngz2w",
     url: "https://www.instagram.com/jingsyue.lin?igsh=cG9qeDA0dTR4bmMx&utm_source=qr",
   },
-  description: "Desktop environment in the browser",
+  description: "Welcome to Grove! Desktop environment in the browser",
   license: "MIT",
   version: "2.0.0",
 };
