@@ -1,3 +1,16 @@
+/**
+ * A React hook that manages the desktop wallpaper for the application.
+ *
+ * This hook is responsible for loading and updating the desktop wallpaper based on the user's preferences and settings. It supports various types of wallpapers, including images, videos, and dynamic wallpapers like VANTA and Stable Diffusion.
+ *
+ * The hook uses the `useFileSystem` and `useSession` contexts to interact with the file system and session data, respectively. It also utilizes the `useWorker` hook to offload wallpaper rendering to a web worker.
+ *
+ * The `useWallpaper` hook can be used in any component that needs to manage the desktop wallpaper, typically the main application or desktop container component.
+ *
+ * @param desktopRef - A React ref that points to the desktop element where the wallpaper should be rendered.
+ * @returns Void - This hook does not return any value, but it updates the desktop wallpaper as needed.
+ */
+
 import { join } from "path";
 import { useTheme } from "styled-components";
 import { useCallback, useEffect, useRef } from "react";

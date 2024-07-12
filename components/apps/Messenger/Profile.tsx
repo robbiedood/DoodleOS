@@ -17,7 +17,7 @@ const Profile: FC<ProfileProps> = ({
   onMouseDown,
   picture,
   pubkey,
-  userName = "Unknown",
+  userName = "Visitor",
 }) => {
   const verifiedDomain = useNip05Domain(nip05, pubkey);
   const [loadedImage, setLoadedImage] = useState("");

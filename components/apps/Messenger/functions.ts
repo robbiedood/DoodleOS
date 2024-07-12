@@ -298,14 +298,7 @@ export const dataToProfile = (
     data,
     nip05,
     picture: VALID_PICTURE_PROTOCOLS.has(protocol) ? picture : undefined,
-    userName:
-      display_name ||
-      name ||
-      username ||
-      (
-        npub ||
-        (publicKey.startsWith("npub") ? publicKey : nip19.npubEncode(publicKey))
-      ).slice(0, 12),
+    userName: display_name || name || username || npub || "visitor",
     website,
   };
 };

@@ -51,7 +51,7 @@ const ProfileBanner: FC<ProfileBannerProps> = ({
     data,
     nip05,
     picture,
-    userName = "New message",
+    userName = "Unknown",
   } = useNostrProfile(pubkey);
   const { connectToRelays, connectedRelays } = useNostr();
   const connectedRelayData = useMemo(

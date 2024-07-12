@@ -2,7 +2,6 @@ import { loadFiles } from "utils/functions";
 
 declare global {
   interface Window {
-    effectInit: (canvas: HTMLCanvasElement) => void;
     initializeEventCountdown: (
       canvas: HTMLCanvasElement,
       targetDate: Date

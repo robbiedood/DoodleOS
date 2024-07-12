@@ -22,8 +22,9 @@ const ChatProfile: FC<{ publicKey: string }> = ({ publicKey }) => {
       >
         {about && <div className="about">{about}</div>}
         <div className="encryption">
-          <span>🔐 End-to-end encrypted</span>
-          <span>Messages are secured with AES256-CBC encryption.</span>
+          <span>👋🏻 Do you like this website?</span>
+          <span> 💬Let us know what you think!</span>
+          <span>📫 Leave your email to receive updates from the website!</span>
         </div>
       </Profile>
     </StyledChatProfile>

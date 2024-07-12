@@ -2,15 +2,74 @@ import { memo } from "react";
 
 export const Avatar = memo(() => (
   <svg
-    style={{ backgroundColor: "#cacdd2" }}
-    viewBox="0 0 512 512"
+    fill="none"
+    height="48"
+    id="User-Circle-Avatar-Happy--Streamline-Plump.svg"
+    viewBox="0 0 48 48"
+    width="48"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      d="M256 281.602c-151.55 0-204.8 76.796-204.8 128v76.796h409.6v-76.796c0-51.204-53.25-128-204.8-128ZM371.2 140.8c0 63.622-51.575 115.2-115.2 115.2s-115.2-51.578-115.2-115.2c0-63.624 51.575-115.198 115.2-115.198S371.2 77.176 371.2 140.8Zm0 0"
-      fill="#fff"
-      transform="translate(0, 50)"
-    />
+    <desc>
+      User Circle Avatar Happy Streamline Icon: https://streamlinehq.com
+    </desc>
+    <g id="Duotone/Interface Essential/User/user-circle-avatar-happy--circle-geometric-human-person-single-user-avatar-happy">
+      <path
+        d="M9.31838 40.3847C4.82623 36.3568 2 30.5084 2 24 2 11.8497 11.8497 2 24 2s22 9.8497 22 22c0 6.5085 -2.8262 12.3568 -7.3184 16.3847 -0.8974 -1.6007 -3.7613 -5.8909 -9.4645 -7.6334C32.9462 30.8497 35.5 26.9731 35.5 22.5 35.5 16.1487 30.3513 11 24 11s-11.5 5.1487 -11.5 11.5c0 4.4732 2.554 8.3499 6.2833 10.2514 -5.7032 1.7427 -8.5675 6.0328 -9.46492 7.6333Z"
+        fill="#8fbffa"
+        id="Subtract"
+        stroke-width="3"
+      />
+      <path
+        d="M18.7852 32.7514C15.0559 30.8499 12.502 26.9732 12.502 22.5c0 -6.3513 5.1487 -11.5 11.5 -11.5 6.3512 0 11.5 5.1487 11.5 11.5 0 4.4731 -2.5539 8.3497 -6.283 10.2513 5.7033 1.7425 8.5673 6.0326 9.4647 7.6333C34.7897 43.8763 29.6438 46 24.0019 46c-5.6418 0 -10.7876 -2.1237 -14.68159 -5.6153 0.89739 -1.6005 3.76169 -5.8905 9.46489 -7.6333Z"
+        fill="#ffffff"
+        id="Union"
+        stroke-width="3"
+      />
+      <path
+        d="M20 19v1"
+        id="Vector 1195"
+        stroke="#2859c5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="3"
+      />
+      <path
+        d="M28 19v1"
+        id="Vector 1196"
+        stroke="#2859c5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="3"
+      />
+      <path
+        d="M28 26c-1.75 2.6667 -6.25 2.6667 -8 0"
+        id="Ellipse 24"
+        stroke="#2859c5"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+      <path
+        d="M2 24c0 12.1503 9.8497 22 22 22s22 -9.8497 22 -22S36.1503 2 24 2 2 11.8497 2 24Z"
+        id="Ellipse 18"
+        stroke="#2859c5"
+        stroke-linejoin="round"
+        stroke-width="3"
+      />
+      <path
+        d="M18.7852 32.7514C15.0559 30.8499 12.502 26.9732 12.502 22.5c0 -6.3513 5.1487 -11.5 11.5 -11.5 6.3512 0 11.5 5.1487 11.5 11.5 0 4.4731 -2.5539 8.3497 -6.283 10.2513 5.7033 1.7425 8.5673 6.0326 9.4647 7.6333C34.7897 43.8763 29.6438 46 24.0019 46c-5.6418 0 -10.7876 -2.1237 -14.68159 -5.6153 0.89739 -1.6005 3.76169 -5.8905 9.46489 -7.6333Z"
+        id="Union_2"
+        stroke="#2859c5"
+        stroke-linejoin="round"
+        stroke-width="3"
+      />
+      <path
+        d="M28 26c-1.75 2.6667 -6.25 2.6667 -8 0"
+        id="Ellipse 25"
+        stroke="#2859c5"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+    </g>
   </svg>
 ));
 

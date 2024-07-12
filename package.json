@@ -134,6 +134,7 @@
     "postcss": "^8.4.39",
     "postcss-styled-syntax": "^0.6.4",
     "postcss-syntax": "^0.36.2",
+    "react-inspector": "^6.0.2",
     "serve": "^14.2.3",
     "stylelint": "^16.6.1",
     "stylelint-config-standard": "^36.0.1",

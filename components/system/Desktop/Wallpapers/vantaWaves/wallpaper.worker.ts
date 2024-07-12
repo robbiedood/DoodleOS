@@ -1,3 +1,8 @@
+/**
+ * Represents the properties required for offscreen rendering of a wallpaper.
+ * This interface is used to pass rendering-related information from the main thread to the worker thread.
+ */
+
 import { type OffscreenRenderProps } from "components/system/Desktop/Wallpapers/types";
 import {
   config,

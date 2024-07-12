@@ -62,10 +62,6 @@ const StyledChatProfile = styled.li`
         gap: 2px;
         margin: 10px;
         padding: 10px 20px;
-
-        span:last-child {
-          font-weight: 100;
-        }
       }
     }
   }

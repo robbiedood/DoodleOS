@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 const StyledProfileBanner = styled.div`
-  background: linear-gradient(hsla(207, 100%, 72%, 50%), rgba(0, 0, 0, 100%));
+  background: linear-gradient(
+    to bottom,
+    hsla(207, 100%, 72%, 70%) 0%,
+    hsla(207, 80%, 50%, 80%) 50%,
+    rgba(0, 0, 0, 90%) 100%
+  );
   border-bottom: 1px solid rgb(57, 58, 59);
   color: #fff;
   display: flex;
