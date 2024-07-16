@@ -7,24 +7,29 @@ import { MenuProvider } from "contexts/menu";
 import { ProcessProvider } from "contexts/process";
 import { SessionProvider } from "contexts/session";
 import { ViewportProvider } from "contexts/viewport";
+import { useReactDevTools } from "hooks/useReactDevTools";
 
-const App = ({ Component, pageProps }: AppProps): React.ReactElement => (
-  <ViewportProvider>
-    <ProcessProvider>
-      <FileSystemProvider>
-        <SessionProvider>
-          <ErrorBoundary>
-            <Metadata />
-            <StyledApp>
-              <MenuProvider>
-                <Component {...pageProps} />
-              </MenuProvider>
-            </StyledApp>
-          </ErrorBoundary>
-        </SessionProvider>
-      </FileSystemProvider>
-    </ProcessProvider>
-  </ViewportProvider>
-);
+const App = ({ Component, pageProps }: AppProps): React.ReactElement => {
+  useReactDevTools();
+
+  return (
+    <ViewportProvider>
+      <ProcessProvider>
+        <FileSystemProvider>
+          <SessionProvider>
+            <ErrorBoundary>
+              <Metadata />
+              <StyledApp>
+                <MenuProvider>
+                  <Component {...pageProps} />
+                </MenuProvider>
+              </StyledApp>
+            </ErrorBoundary>
+          </SessionProvider>
+        </FileSystemProvider>
+      </ProcessProvider>
+    </ViewportProvider>
+  );
+};
 
 export default App;
