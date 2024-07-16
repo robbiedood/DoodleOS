@@ -1,0 +1,18 @@
+{
+  "an-hook": {
+    "description": "analysis hook",
+    "prompt": "Please list all Hook functions in the following code, including useState and useEffect, and explain the role of each Hook, its definition location, how to use it, and their dependencies and references.",
+    "mode": "ask",
+    "context": {
+      "codebase": false,
+      "command": "",
+      "currentDir": false,
+      "currentFile": false,
+      "directoryPath": "",
+      "filePath": "",
+      "none": false,
+      "openTabs": false,
+      "selection": false
+    }
+  }
+}
