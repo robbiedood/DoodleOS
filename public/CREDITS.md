@@ -94,3 +94,7 @@ This project is greatly augmented by code from the open source community. Thank 
 
 - [ntp.js](http://www.ntpjs.org/)
 - [Astronomy Picture of the Day](https://apod.nasa.gov/apod/)
+
+## Music
+- [#Uppbeat](https://uppbeat.io/t/mountaineer/check-it-out)
+  - License code: I66LQDGI8XYWJXLT
