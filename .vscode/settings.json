@@ -5,5 +5,6 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "cody.chat.preInstruction": "Answer all my questions in chinese"
+  "cody.chat.preInstruction": "Answer all my questions in chinese",
+  "CodeGPT.apiKey": "CodeGPT Plus Beta"
 }
