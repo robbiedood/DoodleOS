@@ -21,7 +21,6 @@ const EventCountdown = async (el?: HTMLElement | null): Promise<void> => {
     console.error("No element found");
     return;
   }
-  console.error("Element found");
 
   await loadFiles(libs);
 
