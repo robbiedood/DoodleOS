@@ -8,10 +8,11 @@ import { ProcessProvider } from "contexts/process";
 import { SessionProvider } from "contexts/session";
 import { ViewportProvider } from "contexts/viewport";
 import { useReactDevTools } from "hooks/useReactDevTools";
+import { useLogRocket } from "hooks/useLogRocket";
 
 const App = ({ Component, pageProps }: AppProps): React.ReactElement => {
   useReactDevTools();
-
+  useLogRocket();
   return (
     <ViewportProvider>
       <ProcessProvider>
