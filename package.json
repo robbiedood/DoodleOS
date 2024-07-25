@@ -29,6 +29,7 @@
     "serve": "serve out",
     "stylelint": "stylelint --formatter=verbose **/*.ts*",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "unused-exports": "ts-prune --project tsconfig.json --ignore \"\\pages|\\e2e\" --error"
   },
   "lint-staged": {
@@ -46,6 +47,7 @@
     "ani-cursor": "^0.0.5",
     "browserfs": "https://github.com/jvilk/BrowserFS.git#a96aa2d",
     "butterchurn-presets": "^3.0.0-beta.4",
+    "canvas": "^2.11.2",
     "decode-ico": "^0.4.1",
     "dompurify": "^3.1.5",
     "exif-js": "^2.3.0",
@@ -74,6 +76,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-rnd": "^10.4.11",
+    "reactotron-react-js": "^3.3.14",
+    "reactotron-redux": "^3.1.9",
     "resedit": "^2.0.2",
     "rtf.js": "^3.0.9",
     "styled-components": "^6.1.11",

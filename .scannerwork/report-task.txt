@@ -1,0 +1,6 @@
+projectKey=grove
+serverUrl=http://localhost:9000
+serverVersion=10.6.0.92116
+dashboardUrl=http://localhost:9000/dashboard?id=grove
+ceTaskId=9016d48f-1801-48cb-9b5f-4914c476b604
+ceTaskUrl=http://localhost:9000/api/ce/task?id=9016d48f-1801-48cb-9b5f-4914c476b604
