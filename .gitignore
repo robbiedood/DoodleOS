@@ -1,37 +1,39 @@
-.next
-.swc
-certificates
-out
+website/.next
+website/.swc
+.github
+.vscode
+website/certificates
+website/out
 
-node_modules
+website/node_modules
 
-test-results
-playwright-report
-playwright/.cache
+website/test-results
+website/playwright-report
+website/playwright/.cache
 
-public/robots.txt
-public/rss.xml
-public/sitemap.xml
-public/.index/*
-public/Users/Public/**
+website/public/robots.txt
+website/public/rss.xml
+website/public/sitemap.xml
+website/public/.index/*
+website/public/Users/Public/**
 
-!public/Users/**/desktop.ini
-!public/Users/Public/Desktop
-!public/Users/Public/Desktop/My PC.url
-!public/Users/Public/Desktop/Public.url
-!public/Users/Public/Documents
-!public/Users/Public/Music
-!public/Users/Public/Pictures
-!public/Users/Public/Pictures/prompts.json
-!public/Users/Public/Pictures/slideshow.json
-!public/Users/Public/Start Menu
-!public/Users/Public/Start Menu/*.url
-!public/Users/Public/Start Menu/Emulators
-!public/Users/Public/Start Menu/Emulators/*.url
-!public/Users/Public/Start Menu/Games
-!public/Users/Public/Start Menu/Games/Chrome Dino.url
-!public/Users/Public/Start Menu/Games/ClassiCube.url
-!public/Users/Public/Start Menu/Games/DX-Ball.url
-!public/Users/Public/Start Menu/Games/Quake III Arena.url
-!public/Users/Public/Start Menu/Games/Space Cadet.url
-!public/Users/Public/Videos
+!website/public/Users/**/desktop.ini
+!website/public/Users/Public/Desktop
+!website/public/Users/Public/Desktop/My PC.url
+!website/public/Users/Public/Desktop/Public.url
+!website/public/Users/Public/Documents
+!website/public/Users/Public/Music
+!website/public/Users/Public/Pictures
+!website/public/Users/Public/Pictures/prompts.json
+!website/public/Users/Public/Pictures/slideshow.json
+!website/public/Users/Public/Start Menu
+!website/public/Users/Public/Start Menu/*.url
+!website/public/Users/Public/Start Menu/Emulators
+!website/public/Users/Public/Start Menu/Emulators/*.url
+!website/public/Users/Public/Start Menu/Games
+!website/public/Users/Public/Start Menu/Games/Chrome Dino.url
+!website/public/Users/Public/Start Menu/Games/ClassiCube.url
+!website/public/Users/Public/Start Menu/Games/DX-Ball.url
+!website/public/Users/Public/Start Menu/Games/Quake III Arena.url
+!website/public/Users/Public/Start Menu/Games/Space Cadet.url
+!website/public/Users/Public/Videos
