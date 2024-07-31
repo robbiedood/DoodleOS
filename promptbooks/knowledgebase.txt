@@ -1,0 +1,58 @@
+[Setup]
+Q: How do I set up this project?
+A: To set up this project, you first need to ensure you have the following requirements installed:
+   * Node.js
+   * Yarn
+
+   Once you have these requirements in place, you can proceed with setting up the project for development or production. Would you like information on how to set up for development, production, or using Docker?
+
+Q: What are the requirements to set up this project?
+A: The main requirements for this project are:
+   * Node.js
+   * Yarn
+   
+   Make sure you have these installed before proceeding with any further setup steps.
+
+[Development]
+Q: How do I set up the project for development?
+A: To set up the project for development, follow these steps:
+   1. Run `yarn install` to install dependencies
+   2. Run `yarn build:prebuild` to perform any necessary pre-build steps
+   3. Run `yarn dev` to start the development server
+
+[Production]
+Q: How do I build and run the project for production?
+A: To build and run the project for production:
+   1. Run `yarn install` to install dependencies
+   2. Run `yarn build` to create a production build
+   3. Run `yarn serve` to start the production server
+
+[Docker]
+Q: How can I run this project using Docker?
+A: To run the project using Docker:
+   1. Build the Docker image:
+      `docker build -t daedalos .`
+   2. Run the Docker container:
+      `docker run -dp 3000:3000 --rm --name daedalos daedalos`
+
+[Troubleshooting]
+Q: I'm getting a "digital envelope routines::unsupported" error during `yarn install`. How can I fix this?
+A: This error is related to OpenSSL. To fix it, you need to set the NODE_OPTIONS environment variable. Here's how:
+
+   1. In Dockerfile:
+      Add this line: `ENV NODE_OPTIONS=--openssl-legacy-provider`
+
+   2. In .github/workflows/main.yml:
+      Add this to your run commands: `NODE_OPTIONS='--openssl-legacy-provider' yarn`
+
+   3. In your local environment:
+      - On Unix-like systems (Linux, macOS, Git bash):
+        `export NODE_OPTIONS=--openssl-legacy-provider`
+      - On Windows command prompt:
+        `set NODE_OPTIONS=--openssl-legacy-provider`
+      - On PowerShell:
+        `$env:NODE_OPTIONS = "--openssl-legacy-provider"`
+
+   After setting this option, try running `yarn install` again.
+
+

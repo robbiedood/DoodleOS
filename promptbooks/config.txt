@@ -1,0 +1,5 @@
+Language: English
+Expertise Level: [Beginner/Intermediate/Advanced]
+Response Style: [Concise/Detailed]
+Code Format: Markdown
+Max Response Length: 500 words

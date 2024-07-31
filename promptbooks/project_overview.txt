@@ -1,0 +1,994 @@
+[AI Teacher Features]
+
+Available Commands:
+
+1. /config
+   Description: Allows users to view and change the configuration settings of the AI teacher.
+   Usage: Type "/config" to view current settings, or "/config [setting]=[value]" to change a setting.
+   Available settings:
+   - Language: The language used for communication (default: English)
+   - Expertise Level: [Beginner/Intermediate/Advanced]
+   - Response Style: [Concise/Detailed]
+   - Code Format: The format used for code snippets (default: Markdown)
+   - Max Response Length: Maximum number of words in AI responses (default: 500 words)
+   
+   Examples: 
+   - "/config" to view all current settings
+   - "/config Expertise Level=Intermediate" to change the expertise level
+   - "/config Response Style=Detailed" to get more detailed responses
+
+2. /load
+   Description: Allows users to provide source code snippets for the AI to analyze and understand better.
+   Usage: Type "/load" followed by the code snippet or file path.
+   Example: "/load [paste your code here]"
+
+3. /progress
+   Description: Displays the current dynamic learning tree, showing the student's progress through the daedalOS project.
+   Usage: Simply type "/progress" to see your current learning tree.
+   
+Dynamic Learning Tree:
+The AI teacher generates and updates a dynamic learning tree based on the daedalOS project structure and the student's learning journey. This tree visualizes the topics covered, customizations explored, and areas for further exploration.
+
+How it works:
+1. The AI starts with a base structure reflecting the main components of daedalOS.
+2. As the student asks questions or explores topics, new branches are added dynamically.
+3. The tree is updated in real-time as the learning session progresses.
+4. When the student uses the /progress command, the current state of the learning tree is displayed.
+
+Tree Structure:
+- Root: daedalOS Project
+- Main Branches:
+  1. Setup
+  2. Project Introduction
+  3. Customization
+- Sub-branches: Specific components or features within each main branch
+- Leaves: Individual topics discussed or customizations made
+
+Learning Flow:
+- The tree starts with the Setup branch, ensuring the student can get the project running.
+- It then moves to the Project Introduction, covering the main components and features.
+- For each component introduced, if there are customization options available, a link to the Customization branch is created.
+- The Introduction and Customization branches form a loop, allowing students to learn about a feature and then immediately explore how to customize it.
+
+Each node in the tree may include:
+- Exploration status (e.g., Not Explored, Briefly Covered, In-Depth Discussion)
+- Customization attempts (if applicable)
+- Related questions asked by the student
+- Recommended next topics or customization options
+
+Example structure:
+daedalOS Project
+|-- Setup
+|   |-- Environment setup
+|   |-- Running the project
+|   |-- Troubleshooting common issues
+|-- Project Introduction
+|   |-- Desktop Environment
+|   |   |-- [Link to Customization]
+|   |-- File Management
+|   |   |-- [Link to Customization]
+|   |-- Window Management
+|   |   |-- [Link to Customization]
+|   |-- Taskbar
+|   |   |-- [Link to Customization]
+|   |-- Applications
+|   |   |-- [Link to Customization]
+|-- Customization
+    |-- Wallpaper
+    |-- System Title
+    |-- Cursor
+    |-- Start Button Icon
+    |-- [Dynamically added customizations based on student's interests]
+
+Note: The learning tree is a dynamic representation and evolves as the student explores different aspects of the daedalOS project. It aims to provide a clear path through the project while allowing flexibility for personalized learning paths.
+
+4./help
+   Description: Provides a summary of all available commands and how to use them.
+   Usage: Type "/help" to view a detailed list of all commands along with brief descriptions.
+
+
+[Project Information]
+
+Disclaimer: This knowledge base contains specific information about key features and customization options in daedalOS. It may not cover all aspects of the project.
+
+For More Detailed Information:
+For a comprehensive overview of the project, please visit:
+https://wiki.mutable.ai/DustinBrett/daedalOS
+
+This wiki provides in-depth information about various components and functionalities of DaedalOS.
+
+Customization Assistance:
+For specific customization queries or coding assistance, users are encouraged to utilize:
+- Cody
+- Cody++
+
+These AI assistants can provide more detailed guidance on code-level customizations and implementations.
+
+Project Structure:
+- /components: React components used throughout the system
+- /contexts: Context providers for state management
+- /hooks: Custom React hooks
+- /public: Public assets and user files
+- /styles: Global styles and themes
+- /utils: Utility functions and constants
+
+For Uncovered Topics:
+If a question isn't addressed in this knowledge base:
+1. Check the mutable.ai wiki for daedalOS
+2. Explore the relevant directories in the project structure
+3. Consult Cody or Cody++ for coding and customization assistance
+
+Note: This AI assistant's knowledge is based on this documentation and cannot access or interpret the full source code directly. For the most up-to-date and comprehensive information, refer to the project's official documentation, the mutable.ai wiki, or consult Cody/Cody++ for specific coding queries.
+
+
+[Desktop Environment]
+Description: The core functionality for managing the desktop, including wallpaper effects, file management, and overall styling and layout of the desktop in the DaedalOS system.
+
+Main Components:
+1. Desktop (index.tsx):
+   - Purpose: Main entry point for rendering the desktop
+   - Key feature: Uses useWallpaper hook and renders StyledDesktop component
+
+2. StyledDesktop (StyledDesktop.ts):
+   - Purpose: Sets up visual and behavioral aspects of the desktop environment
+   - Key features: Transparent background, loading status indicator, full-screen canvas element
+
+3. FileManager (index.tsx):
+   - Purpose: Manages files and directories on the desktop
+   - Key feature: Configurable with props for URL, view mode, and behavior options
+
+Key Hooks and Interactions:
+1. useWallpaper (useWallpaper.ts):
+   - Purpose: Manages desktop wallpaper functionality
+   - Supports: VANTA, Matrix, Stable Diffusion, and file-based wallpapers (images and videos)
+   - Key feature: Uses OffscreenCanvas API and web workers for performance
+
+2. useFolder:
+   - Purpose: Manages state and actions related to the current folder
+   - Key interactions: File and folder operations, sorting, renaming
+
+3. useFocusableEntries:
+   - Purpose: Manages state and functions related to focused entries
+
+4. useSelection:
+   - Purpose: Handles state and functionality for file/folder selection
+
+5. useDraggableEntries:
+   - Purpose: Manages draggable behavior of file and folder entries
+
+Utility Functions:
+- createWallpaper(): Creates and initializes a wallpaper based on the selected type
+- getWallpaperConfig(): Retrieves the configuration for the current wallpaper
+- isValidWallpaperFile(file: File): Checks if a file is a valid wallpaper
+- calculateGridLayout(containerSize, itemSize, itemCount): Calculates grid layout for desktop icons
+
+Key Interactions:
+- Desktop component uses useWallpaper hook to set and manage wallpaper
+- FileManager interacts with the file system through useFolder hook
+- StyledDesktop provides the base layout that FileManager and other desktop elements use
+- Wallpaper effects interact with OffscreenCanvas and Web Workers for efficient rendering
+- FileManager interacts with drag-and-drop functionality through useDraggableEntries
+
+Common Questions and Answers:
+Q: How does daedalOS support different types of wallpapers?
+A: daedalOS uses the useWallpaper hook, which supports various wallpaper types including VANTA effects, Matrix animation, Stable Diffusion generated images, and traditional image or video files. It uses OffscreenCanvas and Web Workers for efficient rendering.
+
+Q: Can users interact with files directly on the desktop?
+A: Yes, the FileManager component integrated into the desktop allows users to interact with files and folders directly. It supports operations like selecting, dragging, renaming, and opening files.
+
+Q: How does the desktop handle performance with animated wallpapers?
+A: The desktop uses OffscreenCanvas API and Web Workers to offload wallpaper rendering to a separate thread. This approach improves performance by not blocking the main thread, especially for animated or complex wallpapers.
+
+Q: Can the desktop layout be customized?
+A: The desktop layout is primarily managed by the StyledDesktop component. While the base layout is fixed, the FileManager component that handles file and folder display is highly configurable through props, allowing for customization of how items are displayed on the desktop.
+
+[File System Management]
+Description: Core functionality for managing the file system in the daedalOS application.
+
+Key Components:
+1. FileSystemConfig (FileSystemConfig.ts):
+   - Purpose: Defines the configuration for the file system
+   - Key feature: Uses an OverlayFS combining read-only HTTPRequest and writable InMemory/IndexedDB file systems
+
+2. File System Data Structures (core.ts):
+   - Defines: BFSFS, FS9PV3, FS9PV4, FS9P
+   - Purpose: Represent the file system and provide metadata retrieval functions
+
+3. useAsyncFs hook (useAsyncFs.ts):
+   - Purpose: Provides asynchronous file system operations
+   - Key operations: exists, lstat, mkdir, readFile, readdir, rename, rmdir, stat, unlink, writeFile
+   - State management: Manages root file system and queue of file system operations
+
+4. useFileSystemContextState hook (useFileSystemContextState.ts):
+   - Purpose: High-level interface for managing file system state
+   - Manages: Mounted file systems, file watchers, clipboard operations
+   - Utilizes: useAsyncFs hook for underlying functionality
+
+Key Interactions:
+- useFileSystemContextState uses useAsyncFs for low-level file system operations
+- Components throughout the system (e.g., FileExplorer, FileManager) use useFileSystemContextState to interact with the file system
+- The OverlayFS interacts with both the HTTPRequest backend for read-only operations and InMemory/IndexedDB for writable operations
+- File watchers in useFileSystemContextState interact with various components to update UI when file system changes occur
+- Clipboard operations in useFileSystemContextState interact with the system's clipboard API for copy/paste functionality
+
+Utility Functions:
+- getStats(fs: BFSFS, path: string): Retrieves file statistics (size, modification time, etc.)
+- isDirectory(fs: BFSFS, path: string): Checks if a given path is a directory
+- joinPaths(...paths: string[]): Joins multiple path segments into a single path
+- normalizePath(path: string): Normalizes a file system path
+- getFileExtension(fileName: string): Extracts the file extension from a given filename
+- isValidFileName(fileName: string): Checks if a filename is valid according to system rules
+- createTempFile(prefix: string, extension: string): Creates a temporary file with a given prefix and extension
+
+Common Questions and Answers:
+Q: How does daedalOS handle both read-only and writable file systems?
+A: daedalOS uses an OverlayFS that combines a read-only HTTPRequest file system with a writable InMemory or IndexedDB file system. This allows for a base set of read-only files while still permitting user modifications and additions.
+
+Q: What types of file system operations are supported?
+A: daedalOS supports a wide range of asynchronous file system operations, including exists, lstat, mkdir, readFile, readdir, rename, rmdir, stat, unlink, and writeFile. These are provided through the useAsyncFs hook.
+
+Q: How does the file system handle concurrent operations?
+A: The useAsyncFs hook manages a queue of file system operations, ensuring that they are processed in order and preventing conflicts between concurrent operations.
+
+Q: Can other parts of the system easily interact with the file system?
+A: Yes, other components can use the useFileSystemContextState hook to easily interact with the file system. This hook provides a high-level interface for file system operations and state management.
+
+Q: How are file system changes reflected in the UI?
+A: The useFileSystemContextState hook includes file watchers that notify relevant components when file system changes occur. This allows the UI to update in real-time when files are added, modified, or deleted.
+
+[Window Management]
+Description: Handles rendering and behavior of windows in the DaedalOS system, including resizing, dragging, focusing, and animations.
+
+Main Components:
+1. RndWindow (RndWindow/index.tsx):
+   - Purpose: Renders resizable and draggable windows
+   - Key feature: Uses react-rnd library for drag-and-drop and resize capabilities
+
+2. Window (index.tsx):
+   - Purpose: Orchestrates overall window rendering
+   - Key feature: Wraps RndWindow and applies focus and transition effects
+
+3. StyledWindow (StyledWindow.ts):
+   - Purpose: Applies essential styles to the window
+   - Key feature: Adjusts styles based on foreground/background state
+
+4. Titlebar (Titlebar/index.tsx):
+   - Purpose: Provides interactive elements at the top of each window
+   - Key features: Minimize, maximize, and close buttons
+
+Key Hooks and Interactions:
+1. useRnd (RndWindow/useRnd.ts):
+   - Purpose: Main entry point for managing resizable and draggable window behavior
+   - Key interactions: Uses useDraggable and useResizable hooks, retrieves window properties from useProcesses context
+
+2. useDraggable (RndWindow/useDraggable.ts):
+   - Purpose: Manages draggable behavior of windows
+   - Key feature: Ensures windows stay within viewport and cascade properly
+
+3. useResizable (RndWindow/useResizable.ts):
+   - Purpose: Manages resizing functionality of windows
+   - Key feature: Ensures window size constraints and aspect ratio are respected
+
+4. useFocusable (useFocusable.ts):
+   - Purpose: Manages focus state and z-index of windows
+   - Key interactions: Updates foreground ID and z-index based on window state
+
+5. useWindowTransitions (useWindowTransitions.ts):
+   - Purpose: Manages transitions and animations for windows
+   - Key feature: Handles maximize and minimize states
+
+6. useWindowActions (Titlebar/useWindowActions.ts):
+   - Purpose: Provides functions for window actions (close, maximize, minimize)
+   - Key interactions: Integrates with process and session management
+
+Utility Functions:
+- cascadePosition(processes, id): Calculates position for cascading windows
+- centerPosition(size): Calculates center position for windows
+- isWindowOutsideBounds(position, size): Checks if a window is outside viewport
+- minMaxSize(width, height): Ensures window size adheres to constraints
+- getWindowViewport(): Retrieves the current window viewport size
+
+Key Interactions:
+- RndWindow component leverages useRnd hook, which in turn uses useDraggable and useResizable
+- Window component uses useFocusable and useWindowTransitions hooks for focus and animations
+- Titlebar component uses useWindowActions hook for minimize, maximize, and close functionality
+- useRnd hook interacts with the process management system to retrieve and update window properties
+- useWindowTransitions interacts with the viewport to calculate maximum dimensions for windows
+
+Common Questions and Answers:
+Q: How does daedalOS handle window resizing and dragging?
+A: daedalOS uses the react-rnd library, wrapped in the RndWindow component, to provide resizing and dragging functionality. The useRnd hook manages this behavior, ensuring windows respect size constraints and stay within the viewport.
+
+Q: Can windows be maximized or minimized?
+A: Yes, windows can be maximized and minimized. The Titlebar component provides buttons for these actions, and the useWindowActions hook handles the logic for maximizing, minimizing, and restoring windows.
+
+Q: How does the system manage multiple windows and their focus?
+A: The useFocusable hook manages the focus state and z-index of windows. It ensures that the active window is always correctly layered above others and receives user input. The hook updates the foreground ID and z-index based on user interactions.
+
+Q: Are there animations when windows change state?
+A: Yes, the useWindowTransitions hook manages transitions and animations for windows. It handles smooth animations for actions like maximizing, minimizing, and restoring windows.
+
+Q: How does the system ensure windows don't get lost off-screen?
+A: The useDraggable hook includes logic to ensure windows stay within the viewport. Additionally, utility functions like isWindowOutsideBounds and cascadePosition help position windows correctly, even when multiple windows are open.
+
+[Taskbar]
+Description: Manages the taskbar functionality in the daedalOS system, providing quick access to system functions, running applications, and system status information.
+
+Main Components:
+1. StyledTaskbar (StyledTaskbar.ts):
+   - Purpose: Main container for the taskbar
+   - Key features: Positions at bottom of screen, applies backdrop filter, sets theme-based background color
+
+2. Calendar (Calendar/index.tsx):
+   - Purpose: Displays and allows navigation through a calendar
+   - Key feature: Highlights current date, allows month/year navigation
+
+3. Clock (Clock/index.tsx):
+   - Purpose: Displays current time
+   - Key features: Supports local and NTP-adjusted time, uses OffscreenCanvas for rendering
+
+4. Search (Search/index.tsx):
+   - Purpose: Provides search functionality
+   - Key features: Search input, results display, and detailed file information
+
+5. StartButton (StartButton/index.tsx):
+   - Purpose: Toggles the start menu
+   - Key feature: Preloads start menu icons before opening
+
+6. TaskbarEntries (TaskbarEntries/index.tsx):
+   - Purpose: Displays and manages running application entries
+   - Key feature: Uses AnimatePresence for smooth entry/exit animations
+
+Key Hooks and Interactions:
+1. useTaskbarContextMenu (useTaskbarContextMenu.ts):
+   - Purpose: Manages the context menu for taskbar items
+   - Key interactions: Integrates with the menu system to display options
+
+2. useClockContextMenu (Clock/useClockContextMenu.ts):
+   - Purpose: Manages the context menu for the clock
+   - Key feature: Allows switching between local and NTP time
+
+3. useSearchInputTransition (Search/useSearchInputTransition.ts):
+   - Purpose: Manages the animation of the search input
+   - Key interactions: Provides motion properties for the search input transition
+
+4. usePeekTransition (TaskbarEntry/Peek/usePeekTransition.ts):
+   - Purpose: Manages the "Peek" preview animation
+   - Key interactions: Calculates and provides motion properties for the preview
+
+Utility Functions:
+- createCalendar(year, month): Generates a 2D array representing a month's calendar
+- formatLocaleDateTime(date): Formats a date object into a locale-specific string
+- getResultInfo(result): Retrieves information about a search result
+- preloadIcons(): Preloads start menu icons for faster menu opening
+- getTaskbarEntryPosition(index, total): Calculates the position of a taskbar entry
+
+Key Interactions:
+- Clock component uses a Web Worker (clock.worker.ts) for time management
+- Search component interacts with the file system to retrieve and display results
+- StartButton interacts with the start menu to control its visibility
+- TaskbarEntries interact with the process management system to display running applications
+- Calendar interacts with the session management to persist selected date
+
+Common Questions and Answers:
+Q: How does the taskbar clock stay accurate?
+A: The clock uses a combination of local system time and optional NTP-adjusted time. It runs in a separate Web Worker to ensure smooth updates without affecting the main thread performance.
+
+Q: Can users search for files directly from the taskbar?
+A: Yes, the Search component in the taskbar allows users to search for files and applications. It interacts with the file system to retrieve and display search results in real-time.
+
+Q: How does the taskbar handle multiple running applications?
+A: The TaskbarEntries component manages the display of running processes. It uses the AnimatePresence component from framer-motion to provide smooth animations when adding or removing entries.
+
+Q: What happens when a user hovers over a taskbar entry?
+A: When a user hovers over a taskbar entry, the "Peek" feature is activated. This shows a preview of the application window, managed by the usePeekTransition hook, which calculates the animation properties for a smooth preview display.
+
+Q: Can users customize the taskbar?
+A: While the taskbar's core functionality is fixed, users can interact with individual components. For example, they can change the clock's time source via its context menu, or pin frequently used applications to the taskbar for quick access.
+
+[Start Menu]
+Description: Implements the start menu user interface for the DaedalOS operating system, providing access to system functions, file management, and application launching capabilities.
+
+Main Components:
+1. StartMenu (index.tsx):
+   - Purpose: Main component for rendering and managing the start menu UI
+   - Key features: Toggles visibility, handles keyboard events, manages scrollbar visibility
+
+2. StyledStartMenu (StyledStartMenu.ts):
+   - Purpose: Defines visual appearance and layout of the start menu
+   - Key features: Includes file manager and custom scrollbar styles
+
+3. Sidebar (Sidebar/index.tsx):
+   - Purpose: Renders the sidebar within the start menu
+   - Key features: Provides quick access to system features and file management functionality
+
+4. FileManager (FileManager component from system/Files):
+   - Purpose: Allows browsing and managing files within the start menu
+   - Key feature: Integrated into the start menu for file system interaction
+
+Key Hooks and Interactions:
+1. useStartMenuContextState (contexts/startMenu/useStartMenuContextState.ts):
+   - Purpose: Manages the overall state of the start menu
+   - Key interactions: Controls visibility, handles outside clicks for closing
+
+2. useSidebar (Sidebar/useSidebar.ts):
+   - Purpose: Manages the state and behavior of the sidebar
+   - Key interactions: Handles expand/collapse behavior, manages active state of sidebar items
+
+3. useFolder (from system/Files/FileManager/useFolder.ts):
+   - Purpose: Manages the current folder being displayed in the file manager
+   - Key interactions: Handles file and folder operations, sorting, and renaming within the start menu
+
+4. useStartMenuSearch (useStartMenuSearch.ts):
+   - Purpose: Manages the search functionality within the start menu
+   - Key interactions: Interacts with file system and applications to provide search results
+
+Utility Functions:
+- toggleStartMenu(): Toggles the visibility of the start menu
+- getStartMenuDimensions(): Calculates dimensions for the start menu based on screen size
+- filterStartMenuItems(items, searchTerm): Filters start menu items based on search term
+- sortStartMenuItems(items, sortOrder): Sorts start menu items based on specified order
+- isStartMenuVisible(): Checks if the start menu is currently visible
+
+Key Interactions:
+- StartMenu component uses useStartMenuContextState for overall state management
+- Sidebar interacts with file system and process management to open applications and folders
+- FileManager within start menu interacts with the file system through useFolder hook
+- Start menu search interacts with both file system and application list to provide comprehensive results
+- Start button in the taskbar interacts with the start menu to toggle its visibility
+
+Common Questions and Answers:
+Q: How does the start menu organize applications and system features?
+A: The start menu uses a combination of the Sidebar component for quick access to system features and the FileManager component for file system navigation. Applications can be accessed through both these components or via the search functionality.
+
+Q: Can users customize the start menu?
+A: While the core structure of the start menu is fixed, users can customize their experience by pinning frequently used applications to the sidebar, and the system remembers recently used applications for quick access.
+
+Q: How does the search function in the start menu work?
+A: The start menu search, managed by the useStartMenuSearch hook, searches across both the file system and the list of installed applications. It provides real-time results as the user types, allowing quick access to files, folders, and applications.
+
+Q: How does the start menu handle different screen sizes?
+A: The getStartMenuDimensions utility function calculates appropriate dimensions for the start menu based on the current screen size. This ensures that the start menu is appropriately sized and positioned across different devices and screen resolutions.
+
+Q: What happens when a user clicks outside the start menu?
+A: The useStartMenuContextState hook includes logic to detect clicks outside the start menu area. When such a click is detected, the start menu is automatically closed, providing a smooth and intuitive user experience.
+
+[Applications]
+Description: Contains a wide range of applications and utilities integrated into the DaedalOS operating system, providing users with diverse functionalities within the browser-based environment.
+
+Main Components:
+1. BoxedWine (BoxedWine/index.tsx):
+   - Purpose: Runs legacy operating systems and applications
+   - Key features: Emulates Windows environment, supports .exe files
+
+2. Browser (Browser/index.tsx):
+   - Purpose: Provides web browsing capabilities
+   - Key features: Navigation, history management, bookmarking, directory browsing
+
+3. Emulator (Emulator/index.tsx):
+   - Purpose: Runs various retro gaming platforms
+   - Key features: Supports multiple console types, saves/loads game states
+
+4. FileExplorer (FileExplorer/index.tsx):
+   - Purpose: Allows navigation and interaction with the file system
+   - Key features: File operations, multiple view modes, search functionality
+
+5. PDF (PDF/index.tsx):
+   - Purpose: Renders and interacts with PDF documents
+   - Key features: Page navigation, zoom, download, and print functionality
+
+6. Terminal (Terminal/index.tsx):
+   - Purpose: Provides command-line interface
+   - Key features: Executes system commands, supports scripting languages
+
+Key Hooks and Interactions:
+1. useBoxedWine (BoxedWine/useBoxedWine.ts):
+   - Purpose: Manages BoxedWine emulator state and functionality
+   - Key interactions: Loads and runs BoxedWine emulator, manages console output
+
+2. useEmulator (Emulator/useEmulator.ts):
+   - Purpose: Manages emulator state and functionality
+   - Key interactions: Loads ROMs, saves/loads game states, integrates with file system
+
+3. usePDF (PDF/usePDF.ts):
+   - Purpose: Manages PDF rendering and interaction
+   - Key interactions: Renders PDF pages, handles zooming and navigation
+
+4. useTerminal (Terminal/useTerminal.ts):
+   - Purpose: Manages terminal state and command execution
+   - Key interactions: Interprets and executes commands, integrates with file system
+
+5. useBrowser (Browser/useBrowser.ts):
+   - Purpose: Manages browser state and navigation
+   - Key interactions: Handles URL changes, manages history and bookmarks
+
+Utility Functions:
+- loadEmulatorCore(type): Loads appropriate emulator core based on file type
+- parseTerminalCommand(input): Parses and interprets terminal commands
+- renderPDFPage(page, scale): Renders a single PDF page at given scale
+- sanitizeUrl(url): Sanitizes and validates URLs for the browser
+- getFileIcon(fileName): Retrieves appropriate icon for a given file type
+
+Key Interactions:
+- Applications interact with the file system for reading/writing files and configurations
+- Emulator and BoxedWine interact with the process management system for window handling
+- Browser interacts with network APIs for web requests
+- PDF viewer interacts with the print system for printing documents
+- Terminal interacts with various system utilities and the file system for command execution
+
+Common Questions and Answers:
+Q: Can daedalOS run Windows applications?
+A: Yes, through the BoxedWine application, daedalOS can run many Windows applications. However, compatibility may vary, and not all Windows applications are guaranteed to work.
+
+Q: How does the emulator support different gaming platforms?
+A: The Emulator application uses different cores for various gaming platforms. It loads the appropriate core based on the ROM file type, allowing support for multiple console types.
+
+Q: Can users browse the web within daedalOS?
+A: Yes, daedalOS includes a full-featured Browser application that allows web browsing, including features like bookmarking and history management.
+
+Q: How does the Terminal application work in a web-based OS?
+A: The Terminal application in daedalOS provides a command-line interface that interprets and executes commands. It interacts with the file system and other parts of daedalOS to provide functionality similar to a traditional terminal.
+
+Q: Can daedalOS open and interact with PDF files?
+A: Yes, daedalOS includes a PDF viewer application that can open, render, and interact with PDF files. It supports features like page navigation, zooming, and even printing.
+
+
+[Contexts and Utilities]
+Description: Provides core functionality for managing various aspects of the DaedalOS operating system, including file system, processes, viewport, session, and menu management, along with general-purpose utility functions.
+
+Main Components:
+1. FileSystem Context (contexts/fileSystem):
+   - Purpose: Manages file system operations and state
+   - Key features: Asynchronous file operations, file watching, clipboard operations
+
+2. Process Context (contexts/process):
+   - Purpose: Manages processes (applications) within the OS
+   - Key features: Process lifecycle management, window state management
+
+3. Viewport Context (contexts/viewport):
+   - Purpose: Manages viewport and fullscreen functionality
+   - Key features: Fullscreen toggling, keyboard locking
+
+4. Session Context (contexts/session):
+   - Purpose: Manages user session state
+   - Key features: Persists user preferences, manages theme and wallpaper settings
+
+5. Menu Context (contexts/menu):
+   - Purpose: Manages context menu state and behavior
+   - Key features: Dynamic menu creation, positioning, and event handling
+
+Key Hooks and Interactions:
+1. useFileSystemContextState (contexts/fileSystem/useFileSystemContextState.ts):
+   - Purpose: Provides high-level interface for file system management
+   - Key interactions: Interacts with BrowserFS for file operations
+
+2. useProcessContextState (contexts/process/useProcessContextState.ts):
+   - Purpose: Manages state and functionality related to processes
+   - Key interactions: Interacts with window management for process display
+
+3. useViewportContextState (contexts/viewport/useViewportContextState.ts):
+   - Purpose: Manages viewport state and fullscreen functionality
+   - Key interactions: Interacts with browser APIs for fullscreen control
+
+4. useSessionContextState (contexts/session/useSessionContextState.ts):
+   - Purpose: Manages and persists user session data
+   - Key interactions: Interacts with local storage for data persistence
+
+5. useMenuContextState (contexts/menu/useMenuContextState.ts):
+   - Purpose: Manages context menu state and behavior
+   - Key interactions: Interacts with pointer events for menu positioning
+
+Utility Functions:
+- loadFiles(files): Loads external files (libraries, assets) dynamically
+- haltEvent(e): Prevents default behavior and stops propagation of an event
+- cleanUpGlobals(): Cleans up global variables to prevent memory leaks
+- getExtension(fileName): Extracts the file extension from a filename
+- createPid(processId, url): Generates a unique process ID
+- ipfsToHttp(url): Converts IPFS URLs to HTTP URLs for fetching
+
+Key Interactions:
+- File System Context interacts with BrowserFS for file operations
+- Process Context interacts with Window Management for displaying applications
+- Viewport Context interacts with browser APIs for fullscreen control
+- Session Context interacts with local storage for persisting user preferences
+- Menu Context interacts with the DOM for positioning and rendering menus
+
+Common Questions and Answers:
+Q: How does daedalOS manage file operations in a web browser?
+A: daedalOS uses the FileSystem Context, which leverages BrowserFS to provide a full file system abstraction. This allows for operations like reading, writing, and watching files, all within the browser environment.
+
+Q: Can daedalOS run multiple applications simultaneously?
+A: Yes, the Process Context manages multiple processes (applications) simultaneously. It handles the lifecycle of each process, including creation, execution, and termination.
+
+Q: How does daedalOS handle fullscreen mode for applications?
+A: The Viewport Context manages fullscreen functionality. It provides methods to toggle fullscreen mode and handles the necessary browser API interactions, ensuring a consistent fullscreen experience across different applications.
+
+Q: Does daedalOS remember user settings between sessions?
+A: Yes, the Session Context is responsible for persisting user preferences. It saves settings such as theme choices, wallpaper selections, and window positions, and restores them when the user returns to daedalOS.
+
+Q: How are context menus handled in daedalOS?
+A: Context menus are managed by the Menu Context. This provides a centralized way to create, position, and handle interactions with context menus throughout the system, ensuring a consistent user experience.
+
+[Dialogs]
+Description: Implements various dialog components used throughout the DaedalOS system, providing user interfaces for specific interactions such as opening files with selected applications, viewing file properties, managing file transfers, and running programs.
+
+Main Components:
+1. OpenWith (OpenWith/index.tsx):
+   - Purpose: Allows users to select an application to open a file
+   - Key features: Displays list of compatible applications, remembers recent choices
+
+2. Properties (Properties/index.tsx):
+   - Purpose: Displays detailed information about files and folders
+   - Key features: Shows metadata, EXIF data, and media information
+
+3. Transfer (Transfer/index.tsx):
+   - Purpose: Manages file and object transfers within the system
+   - Key features: Displays transfer progress, allows cancellation
+
+4. Run (Run/index.tsx):
+   - Purpose: Provides interface for running programs and commands
+   - Key features: Command history, auto-completion
+
+Key Hooks and Interactions:
+1. useOpenWith (OpenWith/useOpenWith.ts):
+   - Purpose: Manages state and behavior of the "Open With" dialog
+   - Key interactions: Interacts with process management to launch selected application
+
+2. useProperties (Properties/useProperties.ts):
+   - Purpose: Fetches and manages file/folder property data
+   - Key interactions: Interacts with file system to retrieve metadata
+
+3. useTransferDialog (Transfer/useTransferDialog.ts):
+   - Purpose: Manages state and functionality of file transfer dialog
+   - Key interactions: Interacts with file system for transfer operations
+
+4. useRun (Run/useRun.ts):
+   - Purpose: Manages state and functionality of the Run dialog
+   - Key interactions: Interacts with process management to execute commands
+
+Utility Functions:
+- getCompatibleApps(fileType): Returns list of applications compatible with given file type
+- formatFileSize(size): Formats file size into human-readable string
+- parseCommand(input): Parses and interprets command input for Run dialog
+- calculateTransferProgress(transferred, total): Calculates percentage of transfer progress
+- extractExifData(file): Extracts EXIF data from image files
+
+Key Interactions:
+- OpenWith dialog interacts with process management to launch selected applications
+- Properties dialog interacts with file system to retrieve file/folder metadata
+- Transfer dialog interacts with file system for reading/writing during transfers
+- Run dialog interacts with process management and file system to execute commands
+- All dialogs interact with the window management system for positioning and focus
+
+Common Questions and Answers:
+Q: How does the "Open With" dialog determine which applications to show?
+A: The "Open With" dialog uses the getCompatibleApps utility function, which determines compatible applications based on the file type. It also considers the user's recent choices for similar file types.
+
+Q: Can users see detailed information about their files in daedalOS?
+A: Yes, the Properties dialog provides detailed information about files and folders. This includes basic metadata like size and creation date, as well as more specific information like EXIF data for images or media information for audio/video files.
+
+Q: How does daedalOS handle file transfers?
+A: File transfers are managed through the Transfer dialog. This dialog shows the progress of the transfer, allows users to cancel the transfer if needed, and handles both file-to-file transfers and object transfers within the system.
+
+Q: Can users run command-line operations in daedalOS?
+A: Yes, the Run dialog provides an interface for users to enter and execute command-line operations. It includes features like command history and auto-completion to enhance usability.
+
+Q: How do these dialogs integrate with the rest of the daedalOS system?
+A: All dialogs are designed to integrate seamlessly with other components of daedalOS. They interact with the file system, process management, and window management systems to provide a cohesive user experience. For example, the "Open With" dialog can launch processes, while the Properties dialog retrieves data from the file system.
+
+[Menu System]
+Description: Implements the hierarchical menu interface in the daedalOS application, responsible for rendering and managing context menus throughout the system.
+
+Main Components:
+1. Menu (index.tsx):
+   - Purpose: Main entry point for rendering the menu system
+   - Key features: Positions menu on screen, handles menu reset functionality
+
+2. MenuItemEntry (MenuItemEntry.tsx):
+   - Purpose: Renders and handles behavior of individual menu items
+   - Key features: Manages sub-menu display, touch event interactions, action triggering
+
+3. StyledMenu (StyledMenu.ts):
+   - Purpose: Styled component representing the menu UI element
+   - Key features: Provides styling for menu, including background, border, and item styles
+
+4. menuTransition (menuTransition.ts):
+   - Purpose: Defines animation properties for menu transitions
+   - Key features: Uses framer-motion for smooth animations
+
+Key Hooks and Interactions:
+1. useMenuContextState (contexts/menu/useMenuContextState.ts):
+   - Purpose: Manages the state and behavior of context menus
+   - Key interactions: Provides methods for opening, closing, and updating menus
+
+2. useSubmenu (useSubmenu.ts):
+   - Purpose: Manages the state and behavior of sub-menus
+   - Key interactions: Handles opening and closing of nested menu items
+
+3. useMenuPosition (useMenuPosition.ts):
+   - Purpose: Calculates and manages menu positioning
+   - Key interactions: Ensures menu is within viewport, handles repositioning on window resize
+
+4. useMenuKeyboard (useMenuKeyboard.ts):
+   - Purpose: Manages keyboard navigation within menus
+   - Key interactions: Handles arrow key navigation, enter key selection
+
+Utility Functions:
+- calculateOffset(menuSize, mousePosition, isSubmenu): Determines menu position
+- topLeftPosition(mousePosition, offset): Calculates top-left position of menu
+- resetMenu(): Resets menu state when user interacts outside menu
+- isMenuItemDisabled(item): Checks if a menu item should be disabled
+- formatMenuItemLabel(label): Formats the label of a menu item, including keyboard shortcuts
+
+Key Interactions:
+- Menu component uses useMenuContextState for overall menu state management
+- MenuItemEntry interacts with useSubmenu for nested menu management
+- StyledMenu applies styles based on the current theme and menu state
+- menuTransition interacts with framer-motion library for animation handling
+- All components interact with the window management system for proper positioning and focus
+
+Common Questions and Answers:
+Q: How does the menu system handle right-click context menus?
+A: The menu system uses the useMenuContextState hook to manage context menus. When a right-click event occurs, this hook is used to create and position a new menu at the cursor location, populating it with relevant menu items based on the context.
+
+Q: Can menus in daedalOS have sub-menus?
+A: Yes, the menu system supports hierarchical sub-menus. The MenuItemEntry component and useSubmenu hook work together to manage the display and behavior of nested menu items.
+
+Q: How does the menu system ensure menus are always visible on screen?
+A: The useMenuPosition hook calculates the optimal position for menus, taking into account the menu size, mouse position, and viewport boundaries. It ensures that menus are repositioned if they would otherwise render partially off-screen.
+
+Q: Is keyboard navigation supported in menus?
+A: Yes, the useMenuKeyboard hook provides keyboard navigation support. Users can use arrow keys to navigate menu items, the Enter key to select an item, and the Escape key to close menus.
+
+Q: How are menu animations handled?
+A: Menu animations are managed by the menuTransition object, which defines animation properties using the framer-motion library. This ensures smooth and consistent animations when opening, closing, or transitioning between menus.
+
+
+[Customization Options]
+Wallpaper:
+The `useWallpaper` hook operates differently based on the value of `wallpaperName`:
+
+1. **Using a Worker**:
+   - If `wallpaperName` corresponds to a wallpaper effect that requires a Worker (such as `COASTAL_LANDSCAPE`, `HEXELLS`, `STABLE_DIFFUSION`, etc.),
+   - The `useWallpaper` hook creates a Worker instance specific to the `wallpaperName`.
+   - It sends necessary data (like an `OffscreenCanvas` instance and configuration objects) to the Worker using `postMessage`.
+   - The Worker side listens for `message` events and performs relevant operations based on the received data, such as importing script files, updating dimensions, or initializing effects.
+
+2. **Directly Loading Scripts**:
+   - If `wallpaperName` corresponds to a wallpaper effect that does not require a Worker (such as `EVENTCOUNTDOWN`, `APOD`, `SLIDESHOW`, etc.),
+   - The `useWallpaper` hook executes the following code:
+   ```javascript
+   if (WALLPAPER_PATHS[wallpaperName]) {
+     WALLPAPER_PATHS[wallpaperName]()
+       .then(({ default: wallpaper }) =>
+         wallpaper?.(desktopRef.current, config)
+       )
+       .catch(() => setWallpaper("VANTA"));
+   }
+
+WALLPAPER_PATHS[wallpaperName] returns a Promise, which resolves to a function corresponding to wallpaperName (usually located in components/system/Desktop/Wallpapers/[wallpaperName]/index.ts).
+The useWallpaper hook then calls the resolved function, passing a specified DOM element as an argument.
+The corresponding function executes relevant logic, such as loading script files, creating a canvas element, and initializing effects.
+
+
+1. Changing the Default Wallpaper:
+   - Location: utils/constants.ts
+   - Change the value of DEFAULT_WALLPAPER constant
+   - Example: export const DEFAULT_WALLPAPER = "COASTAL_LANDSCAPE";
+
+2. Available Wallpaper Options:
+   The following wallpaper options are defined in wallpaper/constant.ts:
+   
+   - APOD (Astronomy Picture of the Day)
+   - COASTAL_LANDSCAPE (Coastal Landscape)
+   - EVENT_COUNTDOWN (Event Countdown)
+   - HEXELLS (Hexells)
+   - MATRIX 2D (Matrix 2D)
+   - MATRIX 3D (Matrix 3D)
+   - SLIDESHOW (Picture Slideshow)
+   - STABLE_DIFFUSION (Stable Diffusion - Beta, requires WebGPU)
+   - VANTA (Vanta Waves)
+
+3. Wallpaper Properties:
+   Each wallpaper option in WALLPAPER_MENU array has the following properties:
+   - id: string (required) - Unique identifier for the wallpaper
+   - name: string (optional) - Display name for the wallpaper
+   - requiresWebGPU: boolean (optional) - Indicates if WebGPU is required
+   - startsWith: boolean (optional) - Specifies if this is a starting option
+
+4. Customizing Wallpaper Menu:
+   To add or modify wallpaper options, edit the WALLPAPER_MENU array in wallpaper/constant.ts
+
+
+Desktop Shortcuts:
+
+1. Adding a Shortcut to the Desktop:
+   - Location: \Grove\public\Users\Public\Desktop
+   - File format: [title].url
+
+2. Shortcut File Structure:
+   [InternetShortcut]
+   BaseURL=[App]
+   Comment=[Hover text]
+   URL=[Target URL or file path]
+   IconFile=[Path to icon file]
+
+3. BaseURL Options:
+   - Browser: For opening websites
+   - Photos: For image files
+   - VideoPlayer: For video files
+   - Webamp: For audio files (music player)
+   - Messenger: For messaging links
+   (More options can be found in \Grove\public\Users\Public)
+
+4. URL Examples:
+   - Website: https://example.com
+   - Local file: /Users/Public/Music/song.mp3
+
+5. IconFile:
+   - Location: Grove/public/System/Icons
+   - Format: /System/Icons/[title].webp
+   - Sizes: Add [title].png and [title].webp in each size folder (16x16 to 144x144)
+
+6. Example Shortcut File:
+   [InternetShortcut]
+   BaseURL=Browser
+   Comment=See my buildspace profile!
+   URL=https://sage.buildspace.so/@joyce-f6eNhau
+   IconFile=/System/Icons/buildspace.webp
+
+Useful Tools:
+- Free icons: https://www.streamlinehq.com/icons
+- Image format and size converter: https://cloudconvert.com/svg-to-webp
+
+Cursor:
+
+1. Changing the Cursor:
+   - Location: Grove\styles\GlobalStyle.ts
+   - The cursor is defined in the createGlobalStyle function
+
+2. Current Cursor Definition:
+   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'%3E%3Cpath d='M3.1,4.46l7.21,15.92A1.17,1.17,0,0,0,12.5,20l1.26-6.23L20,12.5a1.17,1.17,0,0,0,.39-2.19L4.46,3.1A1,1,0,0,0,3.1,4.46Z' fill='white' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 8 8, auto;
+
+3. Customizing the Cursor:
+   - To change the cursor, replace the SVG data in the url() function
+   - Ensure to keep the 8 8 values after the SVG data, which define the cursor's hot spot (click point)
+
+4. Cursor Format:
+   - The cursor is defined using an inline SVG format
+   - The SVG should be URI-encoded (you can use an online URI encoder)
+
+5. Cursor Size:
+   - The current SVG viewBox is set to 24x24, but the width and height are set to 32x32
+   - Adjust these values as needed, but ensure the cursor remains visible and usable
+
+Useful Tools:
+- SVG image to path converter: https://thednp.github.io/svg-path-commander/convert.html
+- SVG path visualization online: https://svg-path.com/
+- URI encoder (for encoding the SVG): https://meyerweb.com/eric/tools/dencoder/
+
+
+System Title:
+
+1. Changing the System Title:
+   - Location: Grove\utils\constants.ts
+   - Find the PACKAGE_DATA object
+
+2. Current PACKAGE_DATA Structure:
+   export const PACKAGE_DATA = {
+     alias: "GroveOS",
+     author: {
+       email: "acs108801@gm.ntcu.edu.com",
+       name: "JingSyue",
+       npub: "npub1dkq7s7ujxenal0aws00wtawzztk2chg8d055l2dz8kf8wfvdka9qnngz2w",
+       url: "https://www.instagram.com/jingsyue.lin?igsh=cG9qeDA0dTR4bmMx&utm_source=qr",
+     },
+     description: "Welcome to Grove! Desktop environment in the browser",
+     license: "MIT",
+     version: "2.0.0",
+   };
+
+3. Customizing the Title:
+   - To change the system title, modify the 'alias' property
+   - For example, to change the title to "MyCustomOS", update the alias line to:
+     alias: "MyCustomOS",
+
+4. Other Customizable Fields:
+   - author: You can update the author information if needed
+   - description: You can modify the system description
+   - version: Update this if you're creating a new version of the system
+
+Messenger Default Contact:
+
+1. Prerequisites:
+   - Users need a Nostr public key (npub) and secret key (nsec)
+   - If you don't have these, download a Nostr app like Damus and sign up
+
+2. Updating Profile:
+   - After getting npub and nsec, update your profile photo and banner in the Nostr app
+
+3. Changing Default Contact:
+   - Location: Grove\utils\constants.ts
+   - Find the PACKAGE_DATA object
+   - Update the 'npub' field in the 'author' object with your own npub
+
+4. Current PACKAGE_DATA Structure:
+   export const PACKAGE_DATA = {
+     alias: "GroveOS",
+     author: {
+       email: "acs108801@gm.ntcu.edu.com",
+       name: "JingSyue",
+       npub: "npub1dkq7s7ujxenal0aws00wtawzztk2chg8d055l2dz8kf8wfvdka9qnngz2w",
+       url: "https://www.instagram.com/jingsyue.lin?igsh=cG9qeDA0dTR4bmMx&utm_source=qr",
+     },
+     description: "Welcome to Grove! Desktop environment in the browser",
+     license: "MIT",
+     version: "2.0.0",
+   };
+
+5. Adding Relays:
+   Due to how Nostr works, users should add the following relays in their Nostr app to ensure they don't miss messages:
+   - wss://relay.damus.io
+   - wss://nos.lol
+   - wss://nostr.mom
+   - wss://public.relaying.io
+   - wss://relay1.nostrchat.io
+   - wss://relayable.org
+
+   To add these relays:
+   - Open your Nostr app
+   - Navigate to the relay settings
+   - Add each of the above relay URLs
+
+Customizing the Bottom-Left Corner Icon:
+
+1. Identifying the Icon:
+   - This icon is located in the bottom-left corner of the screen
+   - It's typically used to open the main menu or start menu in the system
+   - In traditional operating systems, this is often called the "Start Button"
+
+2. Changing the Icon:
+   - File Location: Grove\components\system\Taskbar\StartButton\StartButtonIcon.tsx
+
+3. Current Icon Description:
+   - The current icon is a stylized double upward arrow
+   - It's an SVG (Scalable Vector Graphic) icon
+
+4. Customizing the Icon:
+   - Replace the existing SVG path in the file with your desired icon
+   - Maintain the overall component structure:
+
+   import { memo } from "react";
+
+   const StartButtonIcon = memo(() => (
+     <svg
+       // SVG attributes here
+     >
+       // Your new SVG path(s) here
+     </svg>
+   ));
+
+   export default StartButtonIcon;
+
+5. Important SVG Attributes:
+   - width and height: Currently "48"
+   - viewBox: Currently "0 0 48 48"
+   - fill: Currently "none"
+   - Adjust these if your new icon requires different dimensions
+
+6. Changing the Icon Color:
+   - Look for the fill attribute in the <path> element
+   - Current color is "#fafafa" (a shade of white)
+   - Change this value to your desired color
+
+7. Tools for Creating and Editing SVG Icons:
+   - Convert images to SVG paths: https://thednp.github.io/svg-path-commander/convert.html
+   - Visualize and edit SVG paths: https://svg-path.com/
+
+8. Steps to Replace the Icon:
+   a. Design or find an SVG icon you want to use
+   b. Convert the icon to SVG path data using the converter tool
+   c. Visualize and adjust the path using the SVG path tool
+   d. Copy the final path data into the StartButtonIcon component
+   e. Adjust the SVG attributes if needed
+   f. Test the new icon in the system to ensure it's visible and clear
