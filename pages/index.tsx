@@ -17,6 +17,21 @@ useGlobalErrorHandler：管理全局錯誤處理。
 使用 memo 高階組件來優化性能，防止不必要的重渲染。
 
 */
+
+/**
+ * The main entry point component for the DoodleOS application.
+ *
+ * This component is responsible for rendering the desktop interface and the app loader. It uses several custom hooks to manage various aspects of the application:
+ *
+ * - `useIFrameFocuser`: Manages the focus state of iframes.
+ * - `useUrlLoader`: Loads resources based on the current URL.
+ * - `useGlobalKeyboardShortcuts`: Handles global keyboard shortcuts.
+ * - `useGlobalErrorHandler`: Manages global error handling.
+ *
+ * The component renders the `Desktop`, `Taskbar`, and `AppsLoader` components to create the overall user interface.
+ *
+ * This component is wrapped with the `memo` higher-order component to optimize performance and prevent unnecessary re-renders.
+ */
 import { memo } from "react";
 import AppsLoader from "components/system/Apps/AppsLoader";
 import Desktop from "components/system/Desktop";

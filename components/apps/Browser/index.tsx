@@ -1,3 +1,10 @@
+/**
+ * Imports the `basename`, `join`, and `resolve` functions from the `path` module.
+ * These functions are commonly used for working with file paths in a cross-platform way.
+ * - `basename` returns the last portion of a path, typically the file name.
+ * - `join` joins all given path segments together using the platform-specific separator.
+ * - `resolve` resolves a sequence of paths or path segments into an absolute path.
+ */
 import { basename, join, resolve } from "path";
 import { useCallback, useEffect, useRef, useState } from "react";
 import useHistoryMenu from "components/apps/Browser/useHistoryMenu";
