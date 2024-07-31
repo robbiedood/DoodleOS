@@ -37,3 +37,4 @@ public/Users/Public/**
 !public/Users/Public/Videos
 
 .firebase
+.vscode
