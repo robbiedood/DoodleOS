@@ -334,7 +334,7 @@ export const DEFAULT_SCROLLBAR_WIDTH = 17;
 export const TASKBAR_HEIGHT = 30;
 
 export const PACKAGE_DATA = {
-  alias: "WebOS",
+  alias: "GroveOS",
   author: {
     email: "acs108801@gm.ntcu.edu.com",
     name: "JingSyue",
