@@ -10,7 +10,7 @@ Welcome to GroveMentor, your interactive AI teacher designed to help you master 
 
 ## How to Use
 
-To integrate this AI into your system, add the provided files to your AI's knowledge base, and use the `main_prompt.txt` as an initial setup prompt.
+To integrate this AI into your system, add the provided files (knowledgebase.txt, config.txt, characteristic.txt, project_overview.txt)to your AI's knowledge base, and use the `main_prompt.txt` as an initial setup prompt.
 
 - **Starting Up**: Type `/progress` to see your current position in the learning tree.
 - **Configuring**: Adjust settings like language or response style with `/config`.
