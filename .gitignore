@@ -1,37 +1,37 @@
-website/.next
-website/.swc
-website/certificates
-website/out
+website-example1/.next
+website-example1/.swc
+website-example1/certificates
+website-example1/out
 
-website/node_modules
+website-example1/node_modules
 
-website/test-results
-website/playwright-report
-website/playwright/.cache
+website-example1/test-results
+website-example1/playwright-report
+website-example1/playwright/.cache
 
-website/public/robots.txt
-website/public/rss.xml
-website/public/sitemap.xml
-website/public/.index/*
-website/public/Users/Public/**
+website-example1/public/robots.txt
+website-example1/public/rss.xml
+website-example1/public/sitemap.xml
+website-example1/public/.index/*
+website-example1/public/Users/Public/**
 
-!website/public/Users/**/desktop.ini
-!website/public/Users/Public/Desktop
-!website/public/Users/Public/Desktop/My PC.url
-!website/public/Users/Public/Desktop/Public.url
-!website/public/Users/Public/Documents
-!website/public/Users/Public/Music
-!website/public/Users/Public/Pictures
-!website/public/Users/Public/Pictures/prompts.json
-!website/public/Users/Public/Pictures/slideshow.json
-!website/public/Users/Public/Start Menu
-!website/public/Users/Public/Start Menu/*.url
-!website/public/Users/Public/Start Menu/Emulators
-!website/public/Users/Public/Start Menu/Emulators/*.url
-!website/public/Users/Public/Start Menu/Games
-!website/public/Users/Public/Start Menu/Games/Chrome Dino.url
-!website/public/Users/Public/Start Menu/Games/ClassiCube.url
-!website/public/Users/Public/Start Menu/Games/DX-Ball.url
-!website/public/Users/Public/Start Menu/Games/Quake III Arena.url
-!website/public/Users/Public/Start Menu/Games/Space Cadet.url
-!website/public/Users/Public/Videos
+!website-example1/public/Users/**/desktop.ini
+!website-example1/public/Users/Public/Desktop
+!website-example1/public/Users/Public/Desktop/My PC.url
+!website-example1/public/Users/Public/Desktop/Public.url
+!website-example1/public/Users/Public/Documents
+!website-example1/public/Users/Public/Music
+!website-example1/public/Users/Public/Pictures
+!website-example1/public/Users/Public/Pictures/prompts.json
+!website-example1/public/Users/Public/Pictures/slideshow.json
+!website-example1/public/Users/Public/Start Menu
+!website-example1/public/Users/Public/Start Menu/*.url
+!website-example1/public/Users/Public/Start Menu/Emulators
+!website-example1/public/Users/Public/Start Menu/Emulators/*.url
+!website-example1/public/Users/Public/Start Menu/Games
+!website-example1/public/Users/Public/Start Menu/Games/Chrome Dino.url
+!website-example1/public/Users/Public/Start Menu/Games/ClassiCube.url
+!website-example1/public/Users/Public/Start Menu/Games/DX-Ball.url
+!website-example1/public/Users/Public/Start Menu/Games/Quake III Arena.url
+!website-example1/public/Users/Public/Start Menu/Games/Space Cadet.url
+!website-example1/public/Users/Public/Videos
