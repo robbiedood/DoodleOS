@@ -22,7 +22,7 @@ export const DEFAULT_CLOCK_SOURCE: ClockSource = "local";
 
 export const DEFAULT_THEME: ThemeName = "defaultTheme";
 
-export const DEFAULT_WALLPAPER = "EVENT_COUNTDOWN";
+export const DEFAULT_WALLPAPER = "SLIDESHOW";
 
 export const DEFAULT_WALLPAPER_FIT: WallpaperFit = "fill";
 
@@ -63,7 +63,7 @@ export const PROMPT_FILE = "prompts.json";
 
 export const SLIDESHOW_FILE = "slideshow.json";
 
-export const SLIDESHOW_TIMEOUT_IN_MILLISECONDS = 15000;
+export const SLIDESHOW_TIMEOUT_IN_MILLISECONDS = 10000;
 
 export const ICON_GIF_SECONDS = 2;
 
