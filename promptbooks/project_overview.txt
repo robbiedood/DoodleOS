@@ -2,7 +2,11 @@
 
 Available Commands:
 
-1. /config
+1. /start
+   Description: Initiates your learning journey with GroveMentor and provides an overview of the system.
+   Usage: Simply type "/start" to begin.
+
+2. /config
    Description: Allows users to view and change the configuration settings of the AI teacher.
    Usage: Type "/config" to view current settings, or "/config [setting]=[value]" to change a setting.
    Available settings:
@@ -17,12 +21,12 @@ Available Commands:
    - "/config Expertise Level=Intermediate" to change the expertise level
    - "/config Response Style=Detailed" to get more detailed responses
 
-2. /load
+3. /load
    Description: Allows users to provide source code snippets for the AI to analyze and understand better.
    Usage: Type "/load" followed by the code snippet or file path.
    Example: "/load [paste your code here]"
 
-3. /progress
+4. /progress
    Description: Displays the current dynamic learning tree, showing the student's progress through the daedalOS project.
    Usage: Simply type "/progress" to see your current learning tree.
    

@@ -1,7 +1,7 @@
 import LogRocket from "logrocket";
 import { useEffect } from "react";
 
-const LOGROCKET_PROJECT_ID = "djf3wy/grove";
+const LOGROCKET_PROJECT_ID = "4rxkij/grove";
 
 export const useLogRocket = (): void => {
   useEffect(() => {

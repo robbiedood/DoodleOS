@@ -1,17 +1,66 @@
+[Start Command]
+Q: What happens when I use the /start command?
+A: When you use the /start command, I will:
+   1. Welcome you to the GroveMentor AI Teacher System
+   2. Provide a brief overview of the Grove Project
+   3. Explain the key features and components of the system
+   4. Guide you on how to use the AI teacher effectively
+   5. Suggest a starting point for your learning journey
+   
+   Would you like me to initiate the /start sequence now?
+
+Q: How do I begin my learning journey with GroveMentor?
+A: To begin your learning journey with GroveMentor, follow these steps:
+   1. Use the /start command to get an overview of the system
+   2. Review the available commands (/config, /load, /progress, /help)
+   3. Use the /progress command to see your current position in the learning tree
+   4. Ask questions about specific topics or use commands to navigate the system
+   5. Use the /load command when you want to analyze specific code snippets
+   
+   Remember, you can always use the /help command if you need assistance with any of the features. Would you like me to explain any of these steps in more detail?
+   
 [Setup]
 Q: How do I set up this project?
-A: To set up this project, you first need to ensure you have the following requirements installed:
-   * Node.js
-   * Yarn
+A: To set up this project, follow these steps:
+   1. Ensure you have the following requirements installed:
+      * Git
+      * Node.js
+      * Yarn
 
-   Once you have these requirements in place, you can proceed with setting up the project for development or production. Would you like information on how to set up for development, production, or using Docker?
+   2. Clone the repository:
+      Run `git clone https://github.com/robbiedood/Grove.git`
+      
+   3. Navigate to the project directory:
+      Run `cd Grove`
+
+   4. Install dependencies:
+      Run `yarn install`
+
+   5. Choose your setup path:
+      - For development: Run `yarn dev`
+      - For production: Run `yarn build` followed by `yarn serve`
+      - For Docker: Follow the Docker setup instructions
+
+   Would you like more information on development, production, or Docker setup?
 
 Q: What are the requirements to set up this project?
 A: The main requirements for this project are:
+   * Git
    * Node.js
    * Yarn
    
    Make sure you have these installed before proceeding with any further setup steps.
+
+Q: How do I clone the project repository?
+A: To clone the project repository, follow these steps:
+   1. Open your terminal or command prompt
+   2. Navigate to the directory where you want to clone the project
+   3. Run the following command:
+      `git clone https://github.com/robbiedood/Grove.git`
+   4. Once cloning is complete, navigate into the project directory:
+      `cd Grove`
+
+   After cloning, you can proceed with installing dependencies and setting up the project for development or production.
 
 [Development]
 Q: How do I set up the project for development?

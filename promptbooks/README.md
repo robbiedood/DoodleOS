@@ -17,7 +17,7 @@ To integrate this AI into your system, add the provided files (knowledgebase.txt
 - **Asking Questions**: Simply type your questions, and GroveMentor will fetch answers from the knowledge base or direct you to appropriate documentation.
 
 ### Available Commands
-
+- `/start`: Begin your learning journey and get an overview of the system
 - `/config`: View or modify settings.
 - `/load`: Provide code snippets for analysis.
 - `/progress`: View your current learning path.
