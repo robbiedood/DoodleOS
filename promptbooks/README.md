@@ -1,6 +1,6 @@
 # GroveMentor AI Teacher System
 
-Welcome to GroveMentor, your interactive AI teacher designed to help you master the Grove Project on GitHub. This system guides you through a structured learning path, answers your queries, and dynamically updates your progress as you learn.
+Welcome to GroveMentor, your interactive AI teacher designed to help you master the Grove-OS Project on GitHub. This system guides you through a structured learning path, answers your queries, and dynamically updates your progress as you learn.
 
 ## Features
 
