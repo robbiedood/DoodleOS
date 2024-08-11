@@ -14,7 +14,7 @@ Welcome to GroveMentor, your interactive AI teacher designed to help you master 
 ## How to Use on other platform
 
 To integrate this AI into your system, download the provided files in promptbooks folder
-(knowledgebase.txt, config.txt, characteristic.txt, project_overview.txt)
+`knowledgebase.txt`, `config.txt`, `characteristic.txt`, `project_overview.txt`
 
 Add those files to your AI's knowledge base, and copy paste the `main_prompt.txt` as an initial setup prompt.
 
