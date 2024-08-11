@@ -28,7 +28,7 @@ A: To set up this project, follow these steps:
       * Yarn
 
    2. Clone the repository:
-      Run `git clone https://github.com/robbiedood/Grove.git`
+      Run `git clone https://github.com/robbiedood/grove-os`
       
    3. Navigate to the project directory:
       Run `cd Grove`
@@ -56,7 +56,7 @@ A: To clone the project repository, follow these steps:
    1. Open your terminal or command prompt
    2. Navigate to the directory where you want to clone the project
    3. Run the following command:
-      `git clone https://github.com/robbiedood/Grove.git`
+      `git clone https://github.com/robbiedood/grove-os`
    4. Once cloning is complete, navigate into the project directory:
       `cd Grove`
 
