@@ -4,7 +4,6 @@ declare global {
   interface Window {
     initializeEventCountdown: (
       canvas: HTMLCanvasElement,
-      targetDate: Date
     ) => void;
   }
 }
@@ -28,9 +27,8 @@ const EventCountdown = async (el?: HTMLElement | null): Promise<void> => {
   canvas.height = window.innerHeight;
   canvas.width = window.innerWidth;
 
-  const targetDate = new Date("2024-07-27T00:00:00");
 
-  window.initializeEventCountdown(canvas, targetDate);
+  window.initializeEventCountdown(canvas);
   el.append(canvas);
 };
 
